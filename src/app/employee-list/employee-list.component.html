@@ -1,0 +1,40 @@
+<div class="panel panel-primary">
+
+
+  <div layout="row" layout-fill layout-align="center center" *ngIf="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+     The row has been deleted.
+    <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button> -->
+  </div>
+
+    <div class="panel-heading">
+      <h2>Employee List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Department</th>
+            <th>Manager</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees | async">
+            <td>{{employee.Firstname}}</td>
+            <td>{{employee.Lastname}}</td>
+            <td>{{employee.Department}}</td>
+            <td>{{employee.Manager}}</td>
+            <td>
+                <button (click)="employeeDetails(employee.Id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                <button (click)="updateEmployee(employee.Id)" class="btn btn-info" style="margin-left: 10px">Edit</button>&nbsp;
+                <button (click)="deleteEmployee(employee.Id)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
