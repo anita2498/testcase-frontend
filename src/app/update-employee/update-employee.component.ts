@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from '../employee.service';
+import { Department } from '../department';
 
 @Component({
   selector: 'app-update-employee',
@@ -12,6 +13,13 @@ export class UpdateEmployeeComponent implements OnInit {
 
   id: number;
   employee: Employee;
+  departments: Department[] = [
+    {id: 1, name: 'Dev' },
+    {id: 2, name: 'Testing' },
+    {id: 3, name: 'QA' },
+    {id: 4, name: 'HR' },
+    {id: 5, name: 'IT Support' }
+  ];
 
   constructor(private route: ActivatedRoute,private router: Router,
     private employeeService: EmployeeService) { }

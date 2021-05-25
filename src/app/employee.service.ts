@@ -30,4 +30,8 @@ export class EmployeeService {
   getEmployeesList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
+
+  getEmployeeByDept(name: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/dept/${name}`);
+  }
 }

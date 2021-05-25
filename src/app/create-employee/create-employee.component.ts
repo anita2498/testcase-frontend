@@ -1,5 +1,6 @@
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
+import { Department } from '../department';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,6 +13,13 @@ export class CreateEmployeeComponent implements OnInit {
 
   employee: Employee = new Employee();
   submitted = false;
+  departments: Department[] = [
+    {id: 1, name: 'Dev' },
+    {id: 2, name: 'Testing' },
+    {id: 3, name: 'QA' },
+    {id: 4, name: 'HR' },
+    {id: 5, name: 'IT Support' }
+  ];
 
   constructor(private employeeService: EmployeeService,
     private router: Router) { }

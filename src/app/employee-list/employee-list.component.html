@@ -15,15 +15,17 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Department</th>
-            <th>Manager</th>
+            <th scope="col" [appSort]="employees" data-order="desc" data-name="Id">ID</th>
+            <th scope="col" [appSort]="employees" data-order="desc" data-name="Firstname">Firstname</th>
+            <th scope="col" [appSort]="employees" data-order="desc" data-name="Lastname">Lastname</th>
+            <th scope="col" [appSort]="employees" data-order="desc" data-name="Department">Department</th>
+            <th scope="col" [appSort]="employees" data-order="desc" data-name="Manager">Manager</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let employee of employees | async">
+            <td>{{employee.Id}}</td>
             <td>{{employee.Firstname}}</td>
             <td>{{employee.Lastname}}</td>
             <td>{{employee.Department}}</td>
